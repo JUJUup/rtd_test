@@ -1,17 +1,8 @@
-# Welcome to MkDocs
+# Changelog
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+2023-07-09：
 
-## Commands
+这里会存放一些比较正经的东西。
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+最近几个月在高强度探索DART，well-documented  [DART_Doc](https://docs.dart.ucar.edu/en/latest/README.html) 给了我非常多的帮助。现在是一个湿热到难以出门的周末，正好可以摸一个类似的Doc试试。如果这个形式在测试后符合我的期望和习惯的话，或许可以在此基础上建立一个类似私人资料馆的东西。
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.

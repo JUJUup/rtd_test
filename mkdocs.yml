@@ -1,1 +1,16 @@
-site_name: My Docs
+site_name: JUJUnotebook
+theme:
+  name: readthedocs
+  highlightjs: true
+  include_homepage_in_sidebar: true
+plugins:
+  - search
+  # - mkdocstrings:
+
+
+markdown_extensions:
+  - toc
+  - pymdownx.snippets
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
