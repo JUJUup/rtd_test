@@ -104,7 +104,8 @@
 
 <p>如果linux每天能用mail/telegram告诉我下载进度的话，就省的我每天登server查看了(虽然也没有多麻烦……)。不过这个automaticly send mail的方法在别的地方应该也有点用。</p>
 <p>问了下new bing，大致的实现原理如下：</p>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>You can use a cron job to run the <code>ls $DIR</code> command every 24 hours and email the output to yourself. Here's an example of how you can do this:</p>
 <ol>
 <li>Open the crontab file by running <code>crontab -e</code>.</li>
@@ -113,7 +114,7 @@
 This will run the <code>ls $DIR</code> command at 0 minutes past midnight (i.e., every 24 hours) and email the output to <code>your_email@example.com</code> with the subject "Directory Listing".</li>
 </ol>
 <p>Make sure to replace <code>$DIR</code> with the actual directory path and <code>your_email@example.com</code> with your email address.</p>
-</blockquote>
+</div>
 <p>如果要发telegram的话，同理使用telegram-send就行，不过组里的服务器(llleistu@114.212.48.200)还没挂梯子，发不了telegram……比起邮件，还是有telegram更加符合我的使用习惯。给服务器挂梯子的事留着以后再说。</p>
               
             </div>
