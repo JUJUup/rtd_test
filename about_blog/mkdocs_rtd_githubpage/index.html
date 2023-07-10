@@ -48,11 +48,13 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../..">Changelog</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">ABOUT</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">About blog</span></p>
                 <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../encrypt_template/">[Protected] encrypt_template</a>
+                    </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">如何建立一个blog？</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#personal-blogeg-jujus-garage">关于personal blog(eg. JUJU's Garage)</a>
@@ -62,6 +64,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#markdownrstrendering-block">如何让markdown也能写出类似rst的rendering block？</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#code-blockhighlight">如何让code block识别语言并且highlight？</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mkdocs">如何给mkdocs生成的静态网页加密</a>
     </li>
         </ul>
     </li>
@@ -73,6 +77,11 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../about_linux/2023-06-25-email-in-linux/">在linux服务器上自动发邮件</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../about_linux/intro_to_linux/">关于远程服务器的coding</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Changelog</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../changelog/">Changelog</a>
                     </li>
                 </ul>
       </div>
@@ -137,6 +146,21 @@
 <pre><code class="language-python">import markdown
 markdown.markdown(some_text, extensions=['admonition'])
 </code></pre>
+<h3 id="mkdocs">如何给mkdocs生成的静态网页加密</h3>
+<p>这是比较现实的需求，因为某些内容我实际上不想让所有人都看见......</p>
+<p>可以参考这个<a href="[mkdocs-encryptcontent-plugin · PyPI](https://pypi.org/project/mkdocs-encryptcontent-plugin/)">mkdcos plugin</a></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>I want to be able to protect the content of the page with a password.</p>
+<p>Define a password to protect each page independently or a global password to protect them all.</p>
+<p>If a global password exists, all articles and pages are protected with this password.</p>
+<p>If a password is defined in an article or a page, it is always used even if there is a global password.</p>
+<p>If a password is defined as an empty character string, the content is not protected.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>see <a href="/encrypt_template">here</a> for a demo. passwd is 'template'</p>
+</div>
               
             </div>
           </div>
@@ -147,7 +171,7 @@ markdown.markdown(some_text, extensions=['admonition'])
         <a href="../../about_linux/2023-06-25-email-in-linux/" class="btn btn-neutral float-right" title="在linux服务器上自动发邮件">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../.." class="btn btn-neutral" title="Changelog"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../encrypt_template/" class="btn btn-neutral" title="[Protected] encrypt_template"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -173,7 +197,7 @@ markdown.markdown(some_text, extensions=['admonition'])
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../encrypt_template/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../../about_linux/2023-06-25-email-in-linux/" style="color: #fcfcfc">Next &raquo;</a></span>
