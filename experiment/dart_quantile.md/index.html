@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>[Protected] DART_quantile - JUJUnotebook</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "[Protected] DART_quantile";
+    var mkdocs_page_input_path = "experiment/dart_quantile.md.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> JUJUnotebook</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">HOME</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../changelog/">Changelog</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Blog</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../blog/encrypt_template/">[Protected] encrypt_template</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../blog/mkdocs_rtd_githubpage/">如何建立一个blog？</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Experiment</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">[Protected] DART_quantile</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#raw-data">Raw data在哪里？</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#create-dart-obs_seqout">Create DART obs_seq.out</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#merged_fo_data">merged_FO_data是什么？</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Linux</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../linux/2023-06-25-email-in-linux/">在linux服务器上自动发邮件</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../linux/intro_to_linux/">关于远程服务器的coding</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">JUJUnotebook</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Experiment &raquo;</li>
+        
+      
+    
+    <li>[Protected] DART_quantile</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <div id="mkdocs-encrypted-content" style="display:none">dV9CR2rtQ4lZVs+HQd9xkg==;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;^</div>
+<div id="mkdocs-decrypted-content">
+    <form id="mkdocs-decrypt-form">
+        <h1>This content is protected with AES encryption. </h1>
+        <p>Contact your administrator for access to this page.</p>
+        <input type="password" id="mkdocs-content-password" placeholder="Use CTRL+ENTER to provide global password" />
+        
+        <p id="mkdocs-decrypt-msg"></p>
+    </form>
+</div>
+
+<script type="text/javascript">
+var encryptcontent_path = "experiment/dart_quantile.md/";
+var decryption_failure_message = "Invalid password.";
+</script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/enc-base64.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/cipher-core.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/md5.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/aes.js"></script>
+<script type="text/javascript" src="../../assets/javascripts/decrypt-contents.js" defer></script>
+
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../linux/2023-06-25-email-in-linux/" class="btn btn-neutral float-right" title="在linux服务器上自动发邮件">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../blog/mkdocs_rtd_githubpage/" class="btn btn-neutral" title="如何建立一个blog？"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../blog/mkdocs_rtd_githubpage/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../linux/2023-06-25-email-in-linux/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
