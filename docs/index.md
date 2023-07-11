@@ -1,8 +1,35 @@
-# Changelog
+---
+title: HOME
+date: 2021-08-31 19:07:13
+type: "about"
+---
 
-2023-07-09：
+**关于我自己**：一个躲在NJU的大气科学学生。17本，21直博，witchl的羔羊
 
-这里会存放一些比较正经的东西。
+Working on (non-gaussian .and. nonlinear) model Data assimilation
 
-最近几个月在高强度探索DART，well-documented  [DART_Doc](https://docs.dart.ucar.edu/en/latest/README.html) 给了我非常多的帮助。现在是一个湿热到难以出门的周末，正好可以摸一个类似的Doc试试。如果这个形式在测试后符合我的期望和习惯的话，或许可以在此基础上建立一个类似私人资料馆的东西。
+泛ACG文化/两轮交通工具骑行及维修爱好者
+
+对社会没有贡献的无党派人士。
+
+---
+
+**关于这个Notebook**: 这里是我的个人资料库。有些私密的地方还是会上锁的......
+
+**其他能找到我的地方**：[bilibili](https://space.bilibili.com/259337113?spm_id_from=333.1007.0.0) , [github](https://github.com/JUJUup), [twitter](https://twitter.com/JUJU66206378), [Mail](mailto:DZ21280003@smail.nju.edu.cn)
+
+**Keep in touch**: [RSS订阅](feed:https://jujuup.github.io/atom.xml)
+
+!!! warning
+    上面这个RSS源仅适用于JUJU Garage。这里大概率会频繁更新，并且作为资料库也不打算做comment之类的东西，所以暂时不考虑另开一个RSS。如果有任何问题的话请在本站对应的[github repo](https://github.com/JUJUup/JUJUnotebook)中提issue～
+
+---
+
+**一些友链**：
+
+洲先生的[blog](https://myodyssey.github.io/)
+
+zhongrui的[blog](https://droneree.github.io/)
+
+我的[Garage杂物堆](https://jujuup.github.io/)
 

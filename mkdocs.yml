@@ -5,12 +5,11 @@ theme:
   include_homepage_in_sidebar: true
 plugins:
   - search
+  - encryptcontent
   # - mkdocstrings:
 
 
 markdown_extensions:
   - toc
-  - pymdownx.snippets
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.superfences
+  - admonition # to use rendering block like rst
+
