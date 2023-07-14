@@ -142,28 +142,28 @@
 <p>im assimilating OSSE obs into WRF with fine model resolution, which need a large memory, so i change the real precision by editing $DART_DIR/assimilation_code/modules/utilities/types_mod.f90 follows this guide https://docs.dart.ucar.edu/en/latest/models/wrf/tutorial/README.html#build-the-dart-executables. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>! real precision:
-! TO RUN WITH REDUCED PRECISION REALS (and use correspondingly less memory)
-! comment OUT the r8 definition below and use the second one:
-integer, parameter :: r4 = SELECTED_REAL_KIND(6,30)
-integer, parameter :: r8 = SELECTED_REAL_KIND(12)   ! 8 byte reals
-!integer, parameter :: r8 = r4                      ! alias r8 to r4</p>
+<p>! real precision:</p>
+<p>! TO RUN WITH REDUCED PRECISION REALS (and use correspondingly less memory)</p>
+<p>! comment OUT the r8 definition below and use the second one:</p>
+<p>integer, parameter :: r4 = SELECTED_REAL_KIND(6,30)</p>
+<p>integer, parameter :: r8 = SELECTED_REAL_KIND(12)   ! 8 byte reals</p>
+<p>!integer, parameter :: r8 = r4                      ! alias r8 to r4</p>
 </div>
 <p>after a quickbuild recompile, the filter is re-submitted, and it abort with these message:</p>
 <div class="admonition error">
 <p class="admonition-title">Error</p>
-<p>ERROR FROM:
-source : rh_distribution_mod.f90
-routine: inv_rh_cdf
-message:  x less than lower_bound           19 -2.0822274E-15</p>
+<p>ERROR FROM:</p>
+<p>source : rh_distribution_mod.f90</p>
+<p>routine: inv_rh_cdf</p>
+<p>message:  x less than lower_bound           19 -2.0822274E-15</p>
 </div>
 <p>i have tried the two real precision in a coarser grid case, r8 goes smoothly without any problem, and r4 will encounter the same error:</p>
 <div class="admonition error">
 <p class="admonition-title">Error</p>
-<p>ERROR FROM:
-source : rh_distribution_mod.f90
-routine: inv_rh_cdf
-message:  x less than lower_bound           11 -4.1970271E-16</p>
+<p>ERROR FROM:</p>
+<p>source : rh_distribution_mod.f90</p>
+<p>routine: inv_rh_cdf</p>
+<p>message:  x less than lower_bound           11 -4.1970271E-16</p>
 </div>
 <p>The error part of code in inv_rh_cdf says:</p>
 <pre><code class="language-fortran">   ! Check for posterior violating bounds; This may not be needed after development testing
