@@ -57,9 +57,9 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Bike</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../bike/chain_len/">链条长度的确定</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../bike/memo/">memo for little tricks</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../bike/silkroad/">Silkroad</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../bike/silkroad/">关于202308丝绸之路的规划</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Blog</span></p>
@@ -81,8 +81,6 @@
                     <li class="toctree-l1"><a class="reference internal" href="../2023-06-25-email-in-linux/">在linux服务器上自动发邮件</a>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Automatic script header in VSCode</a>
-    <ul class="current">
-    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../intro_to_linux/">关于远程服务器的coding</a>
                     </li>
@@ -123,7 +121,45 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="automatic-script-header-in-vscode">Automatic script header in VSCode</h1>
+                <p>使用snippets: <a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets">vscode official support</a> 这里同时也有pre-defined variable的介绍。</p>
+<p><a href="https://code.visualstudio.com/docs/languages/markdown#:~:text=Snippets%20for%20Markdown,Snippets%20to%20find%20out%20how.">snippets for markdown</a></p>
+<p>snippets我认为是最好的选择。extension里当然也有一些auto-header的插件，但我觉得是脱裤子放屁的行为，VSCode 内置的snippets能简单完成的事不需要再复杂化了(可能也是因为我没有复杂的header需求)。</p>
+<p>如无必要，勿增实体！</p>
+<!-- more -->
+
+<p>我在markdown.json里的设置，可以作为一个例子</p>
+<pre><code class="language-json">&quot;Auto-generated Header&quot;: {
+&quot;prefix&quot;: &quot;header&quot;,
+&quot;body&quot;: [
+    &quot;---&quot;,
+    &quot;title: &quot;,
+    &quot;date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}&quot;,
+    &quot;categories:&quot;,
+    &quot;tags: &quot;,
+    &quot;---&quot;,
+    &quot;&lt;!-- more --&gt;&quot;
+],
+&quot;description&quot;: &quot;header part for all of haoxing's blog&quot;
+</code></pre>
+<p>设置完成后，在markdown中输入header，就可以自动生成下面这一串：</p>
+<pre><code class="language-markdown">---
+title: 
+date: 2023-07-15 15:26:47
+categories:
+tags: 
+---
+&lt;!-- more --&gt;
+</code></pre>
+<p>如果没有反应，请参考<a href="https://github.com/Microsoft/vscode/issues/26108">this issue in vscode github</a>
+下面是我在user setting.json里面的code，可以作为一个例子</p>
+<pre><code class="language-json">&quot;[markdown]&quot;: {
+    &quot;editor.unicodeHighlight.ambiguousCharacters&quot;: false,
+    &quot;editor.unicodeHighlight.invisibleCharacters&quot;: false,
+    &quot;diffEditor.ignoreTrimWhitespace&quot;: false,
+    &quot;editor.wordWrap&quot;: &quot;on&quot;,
+    &quot;editor.quickSuggestions&quot;: true
+}
+</code></pre>
               
             </div>
           </div>
