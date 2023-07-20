@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  
+  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/blog/mkdocs_rtd_githubpage/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
   <title>如何建立一个blog？ - JUJUnotebook</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
@@ -20,12 +20,13 @@
     // Current page data
     var mkdocs_page_name = "\u5982\u4f55\u5efa\u7acb\u4e00\u4e2ablog\uff1f";
     var mkdocs_page_input_path = "blog/mkdocs_rtd_githubpage.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/JUJUnotebook/blog/mkdocs_rtd_githubpage/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../js/modernizr-2.8.3.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/fortran.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -80,14 +81,18 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sitegoogle">让你的site能被google搜索到</a>
+    </li>
     </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Experiment</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/dart_quantile/">DART_QCEFF</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/dart_quantile/">DART_QCEFF main log</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../experiment/real_precise/">关于DART/WRF的精度问题</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/rhf_bnrhf_diff/">RHF与BNRHF主要的不同</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Linux</span></p>
@@ -127,6 +132,9 @@
     <li>如何建立一个blog？</li>
     <li class="wy-breadcrumbs-aside">
       
+        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/blog/mkdocs_rtd_githubpage.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
     </li>
   </ul>
   
@@ -143,6 +151,7 @@
 <p>对于使用markdown进行Doc书写，同样有类似的小东西：<strong>mkdocs</strong>。并且readthedoc同样兼容通过mkdocs编译出的site。</p>
 <p>basic start of medic-readthedoc: <a href="https://docs.readthedocs.io/en/stable/intro/getting-started-with-mkdocs.html">Getting started with MkDocs — Read the Docs user documentation 9.15.0 documentation</a></p>
 <p>some official examples: <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/">readthedocs-examples/example-mkdocs-basic: A basic MkDocs project for Read the Docs (github.com)</a></p>
+<p><a href="https://foreachsam.github.io/book-util-mkdocs/book/content/workflow/build-site/">一个湾湾人的mkdcos教程</a>，看起来还可以。</p>
 <p>For now, this little notebook hosted on github page is enough, no need to host it on Readthedoc. </p>
 <h3 id="markdownrstrendering-block">如何让markdown也能写出类似rst的rendering block？</h3>
 <p>MkDocs uses the Python Markdown library to translate Markdown files into HTML. Python Markdown supports a variety of extensions that customize how pages are formatted. This setting lets you enable a list of extensions beyond the ones that MkDocs uses by default (meta, toc, tables, and fenced_code).</p>
@@ -154,6 +163,8 @@
 <h3 id="code-blockhighlight">如何让code block识别语言并且highlight？</h3>
 <p>see this mkdocs <a href="https://github.com/mkdocs/mkdocs/issues/263">issue</a></p>
 <p>also see the <a href="https://www.mkdocs.org/user-guide/writing-your-docs/">official mkdocs Doc</a></p>
+<p>to be more exactly, <a href="https://mkdocs.readthedocs.io/en/latest/user-guide/choosing-your-theme/#readthedocs">see here</a> for readthedocs theme setting.</p>
+<p>By default, highlight.js only supports 23 common languages. List additional languages here to include support for them.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>下面是一个例子。但是我目前还没有找到能让rendering block与code block叠加在一起的方法。</p>
@@ -176,6 +187,14 @@ markdown.markdown(some_text, extensions=['admonition'])
 <p class="admonition-title">Tip</p>
 <p>see <a href="/encrypt_template">here</a> for a demo. passwd is 'template'</p>
 </div>
+<h2 id="sitegoogle">让你的site能被google搜索到</h2>
+<p>register you site in <a href="https://search.google.com/search-console">google search console</a></p>
+<p>need to upload the sitemap. So what is sitemap?</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The concept of this format is extremely simple: you create an XML file that lists the pages on your site, as well as some information about them (update frequency, crawl priority, etc.):</p>
+<p>see more at <a href="https://octoperf.com/blog/2015/06/17/mkdocs-sitemap/#sitemapxml">here</a></p>
+</div>
               
             </div>
           </div>
@@ -183,7 +202,7 @@ markdown.markdown(some_text, extensions=['admonition'])
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../experiment/dart_quantile/" class="btn btn-neutral float-right" title="DART_QCEFF">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../experiment/dart_quantile/" class="btn btn-neutral float-right" title="DART_QCEFF main log">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../encrypt_template/" class="btn btn-neutral" title="[Protected] encrypt_template"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -210,6 +229,8 @@ markdown.markdown(some_text, extensions=['admonition'])
 
   <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/JUJUup/JUJUnotebook/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../encrypt_template/" style="color: #fcfcfc;">&laquo; Previous</a></span>
