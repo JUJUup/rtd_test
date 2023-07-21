@@ -1,51 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://jujuup.github.io/JUJUnotebook/</loc>
-     <lastmod>2023-07-20</lastmod>
+     <lastmod>2023-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jujuup.github.io/JUJUnotebook/changelog/</loc>
-     <lastmod>2023-07-20</lastmod>
+     <lastmod>2023-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jujuup.github.io/JUJUnotebook/bike/memo/</loc>
-     <lastmod>2023-07-20</lastmod>
+     <lastmod>2023-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jujuup.github.io/JUJUnotebook/bike/silkroad/</loc>
-     <lastmod>2023-07-20</lastmod>
+     <lastmod>2023-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jujuup.github.io/JUJUnotebook/blog/encrypt_template/</loc>
-     <lastmod>2023-07-20</lastmod>
+     <lastmod>2023-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jujuup.github.io/JUJUnotebook/blog/mkdocs_rtd_githubpage/</loc>
-     <lastmod>2023-07-20</lastmod>
+     <lastmod>2023-07-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jujuup.github.io/JUJUnotebook/coding/2023-06-25-email-in-linux/</loc>
+     <lastmod>2023-07-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jujuup.github.io/JUJUnotebook/coding/Automatic%20script%20header%20in%20VSCode/</loc>
+     <lastmod>2023-07-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jujuup.github.io/JUJUnotebook/coding/about_WSL/</loc>
+     <lastmod>2023-07-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jujuup.github.io/JUJUnotebook/coding/intro_to_linux/</loc>
+     <lastmod>2023-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jujuup.github.io/JUJUnotebook/experiment/dart_quantile/</loc>
-     <lastmod>2023-07-20</lastmod>
+     <lastmod>2023-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jujuup.github.io/JUJUnotebook/experiment/real_precise/</loc>
-     <lastmod>2023-07-20</lastmod>
+     <lastmod>2023-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jujuup.github.io/JUJUnotebook/experiment/rhf_bnrhf_diff/</loc>
-     <lastmod>2023-07-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://jujuup.github.io/JUJUnotebook/linux/2023-06-25-email-in-linux/</loc>
-     <lastmod>2023-07-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://jujuup.github.io/JUJUnotebook/linux/Automatic%20script%20header%20in%20VSCode/</loc>
-     <lastmod>2023-07-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://jujuup.github.io/JUJUnotebook/linux/intro_to_linux/</loc>
-     <lastmod>2023-07-20</lastmod>
+     <lastmod>2023-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

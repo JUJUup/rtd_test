@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/linux/2023-06-25-email-in-linux/">
+  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/coding/about_WSL/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>在linux服务器上自动发邮件 - JUJUnotebook</title>
+  <title>about WSL - JUJUnotebook</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u5728linux\u670d\u52a1\u5668\u4e0a\u81ea\u52a8\u53d1\u90ae\u4ef6";
-    var mkdocs_page_input_path = "linux/2023-06-25-email-in-linux.md";
-    var mkdocs_page_url = "/JUJUnotebook/linux/2023-06-25-email-in-linux/";
+    var mkdocs_page_name = "about WSL";
+    var mkdocs_page_input_path = "coding/about_WSL.md";
+    var mkdocs_page_url = "/JUJUnotebook/coding/about_WSL/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -70,22 +70,30 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../blog/mkdocs_rtd_githubpage/">如何建立一个blog？</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Coding</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../2023-06-25-email-in-linux/">在linux服务器上自动发邮件</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Automatic%20script%20header%20in%20VSCode/">Automatic script header in VSCode</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">about WSL</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install">install</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using">using</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../intro_to_linux/">关于远程服务器的coding</a>
+                    </li>
+                </ul>
                 <p class="caption"><span class="caption-text">Experiment</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/dart_quantile/">[Protected] DART_QCEFF main log</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/dart_quantile/">DART_QCEFF main log</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../experiment/real_precise/">关于DART/WRF的精度问题</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../experiment/rhf_bnrhf_diff/">RHF与BNRHF主要的不同</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Linux</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">在linux服务器上自动发邮件</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Automatic%20script%20header%20in%20VSCode/">Automatic script header in VSCode</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../intro_to_linux/">关于远程服务器的coding</a>
                     </li>
                 </ul>
       </div>
@@ -109,14 +117,14 @@
     
       
         
-          <li>Linux &raquo;</li>
+          <li>Coding &raquo;</li>
         
       
     
-    <li>在linux服务器上自动发邮件</li>
+    <li>about WSL</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/linux/2023-06-25-email-in-linux.md"
+        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/coding/about_WSL.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -127,23 +135,30 @@
           <div role="main">
             <div class="section">
               
-                <p>最近又开始了一年一度的台风季搬砖。组里的NCAR GFS/GDAS下载脚本已经被我粗糙的改成了自动化version，但是去年实践下来偶尔会因为莫名原因崩掉，所以还是免不了每天上去当赛博监工看看赛博尼哥有没有在好好干活……又犯懒了，得找个办法把赛博监工的活也给代劳一下。</p>
-<!-- more -->
-
-<p>如果linux每天能用mail/telegram告诉我下载进度的话，就省的我每天登server查看了(虽然也没有多麻烦……)。不过这个automaticly send mail的方法在别的地方应该也有点用。</p>
-<p>问了下new bing，大致的实现原理如下：</p>
+                <!-- more -->
+<h1 id="about-wsl-in-windows">About WSL in windows</h1>
+<h2 id="install">install</h2>
+<p><a href="https://learn.microsoft.com/en-us/windows/wsl/install">windows official totorial</a></p>
+<p>the distribution i installed: Ubuntu. $wsl --install Ubuntu$</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>You can use a cron job to run the <code>ls $DIR</code> command every 24 hours and email the output to yourself. Here's an example of how you can do this:</p>
-<ol>
-<li>Open the crontab file by running <code>crontab -e</code>.</li>
-<li>Add the following line to the file:
-<code>0 0 * * * ls $DIR | mail -s "Directory Listing" your_email@example.com</code>
-This will run the <code>ls $DIR</code> command at 0 minutes past midnight (i.e., every 24 hours) and email the output to <code>your_email@example.com</code> with the subject "Directory Listing".</li>
-</ol>
-<p>Make sure to replace <code>$DIR</code> with the actual directory path and <code>your_email@example.com</code> with your email address.</p>
+<p>about this bug: 
+Installing, this may take a few minutes...
+WslRegisterDistribution failed with error: 0x800701bc
+Error: 0x800701bc WSL 2 ?????????????????? https://aka.ms/wsl2kernel</p>
+<p>please see this <a href="https://github.com/microsoft/WSL/issues/5393">issue</a></p>
 </div>
-<p>如果要发telegram的话，同理使用telegram-send就行，不过组里的服务器(llleistu@114.212.48.200)还没挂梯子，发不了telegram……比起邮件，还是有telegram更加符合我的使用习惯。给服务器挂梯子的事留着以后再说。</p>
+<h2 id="using">using</h2>
+<p><a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode">Get started using Visual Studio Code with Windows Subsystem for Linux</a></p>
+<blockquote>
+<p>You can access Windows files from WSL by navigating to the <code>/mnt</code> directory. For example, to access the C drive, you can use the <code>cd</code> command in the Linux terminal to navigate to <code>/mnt/c</code> ¹. You can also move, edit, create, and delete files between the two systems through WSL ¹.</p>
+<p>For example, to move a file from the Windows file system to the Linux file system, you can use the <code>cp</code> or <code>mv</code> commands ¹. To edit a Windows file through WSL, you can use any text editor that can be opened in the terminal ¹.</p>
+<p>For more detailed information on how to work across Windows and Linux file systems, you can check out this guide from Microsoft Learn ².</p>
+<p>源: 与必应的对话， 7/21/2023
+(1) Access the Windows file system through WSL! - DEV Community. https://dev.to/ivayloiv/access-the-windows-file-system-through-wsl-1ac4.
+(2) Working across file systems | Microsoft Learn. https://learn.microsoft.com/en-us/windows/wsl/filesystems.
+(3) File Permissions for WSL | Microsoft Learn. https://learn.microsoft.com/en-us/windows/wsl/file-permissions.</p>
+</blockquote>
               
             </div>
           </div>
@@ -151,10 +166,10 @@ This will run the <code>ls $DIR</code> command at 0 minutes past midnight (i.e.,
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Automatic%20script%20header%20in%20VSCode/" class="btn btn-neutral float-right" title="Automatic script header in VSCode">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../intro_to_linux/" class="btn btn-neutral float-right" title="关于远程服务器的coding">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../experiment/rhf_bnrhf_diff/" class="btn btn-neutral" title="RHF与BNRHF主要的不同"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Automatic%20script%20header%20in%20VSCode/" class="btn btn-neutral" title="Automatic script header in VSCode"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -182,10 +197,10 @@ This will run the <code>ls $DIR</code> command at 0 minutes past midnight (i.e.,
           <a href="https://github.com/JUJUup/JUJUnotebook/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../experiment/rhf_bnrhf_diff/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Automatic%20script%20header%20in%20VSCode/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../Automatic%20script%20header%20in%20VSCode/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../intro_to_linux/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
