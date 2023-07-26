@@ -89,8 +89,6 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../experiment/real_precise/">关于DART/WRF的精度问题</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../experiment/rhf_bnrhf_diff/">RHF与BNRHF主要的不同</a>
-                    </li>
                 </ul>
       </div>
     </div>
@@ -131,6 +129,8 @@
 <p>2023-07-09：</p>
 <p>最近几个月在高强度探索DART，well-documented  <a href="https://docs.dart.ucar.edu/en/latest/README.html">DART Doc</a> 给了我非常多的帮助。现在是一个湿热到难以出门的周末，正好适合蹲在宿舍摸一个类似的Doc试试。如果这个形式在测试后符合我的期望和习惯的话，或许可以在此基础上建立一个类似私人资料库的东西。</p>
 <p>另，由于更新（可能）会比较频繁，只有notebook架构出现改动了才会记录在changelog中。</p>
+<p>2023-07-26:</p>
+<p>add support for mkdocs-bib. Now i can write with cross-reference~</p>
               
             </div>
           </div>
@@ -178,6 +178,8 @@
 </div>
     <script>var base_url = '..';</script>
     <script src="../js/theme.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" defer></script>
       <script src="../search/main.js" defer></script>
     <script defer>
         window.onload = function () {

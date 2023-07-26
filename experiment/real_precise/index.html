@@ -93,8 +93,6 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../rhf_bnrhf_diff/">RHF与BNRHF主要的不同</a>
-                    </li>
                 </ul>
       </div>
     </div>
@@ -193,14 +191,69 @@
 <p>Thanks for any reply~</p>
 <p>Haoxing</p>
 <hr />
+<p>On Sun, Jul 16, 2023 at 11:13 AM Jeffrey Anderson <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#108;&#97;&#64;&#117;&#99;&#97;&#114;&#46;&#101;&#100;&#117;">&#106;&#108;&#97;&#64;&#117;&#99;&#97;&#114;&#46;&#101;&#100;&#117;</a> wrote:
+Haoxing,
+The quantile_method branch has not been tested with reduced precision for reals. I think there are serious concerns about using the transforms with reduced precision, but I do not have time to evaluate those issues in the immediate future. A solution would be to work with higher resolution within certain parts of the assimilation code, but I have not thought about exactly what part of the code would require that. Obviously the message you report has identified at least one place.</p>
+<p>You could go ahead and turn off this error and see what happens, but you should be extremely cautious in interpreting the results. </p>
+<p>Sorry that I can't be of more immediate help, Jeff</p>
+<hr />
+<p>Hi Haoxing,</p>
+<p>Here are a few namelist options you can set to reduce the per-node memory for filter.  Possibly your WRF domain is still too big, but you can give these a try. </p>
+<p>&amp;assim_tools_nml
+distribute_mean = .true.
+/
+This will spread the mean across all processors, rather than each processor having a copy of the mean during the assimilation.</p>
+<p>$ensemble_manager_nml
+layout = 2
+tasks_per_node = N
+/
+where N is the number of tasks per node you are using on the machine.  This will spread out the ensemble members across the nodes, which reduces the per-node memory particularly when doing state IO.</p>
+<p>&amp;state_vector_io_nml
+single_precision_output = .true.
+/
+This will read and write wrf single precision (r4) files, even if filter is built with double precision (r8).   This is useful if you need to run wrf in single precision, but you have enough per-node memory to to run filter double precision. </p>
+<p>Cheers,
+Helen</p>
+<hr />
+<p>Hi Jeff and Helen,</p>
+<p>Thanks for the reply! I have tried the suggested options from Helen(distribute_mean = .true. || tasks_per_node = 30 || single_precision_output = .true.), it does not abort when using fewer cores, but is stuck in 'filter_assim' and not output any info... The end of log file is shown below, and the whole log and input.nml will be in attachment. (the input.nml and test.log is using main branch's filter. quantile_method branch's filter is also facing the same problem.)</p>
+<p>PE 0:  filter trace: After  computing prior observation values
+ PE 0:  filter trace: Before observation space diagnostics
+ PE 0:  filter trace: After  observation space diagnostics
+ PE 0: filter: Ready to assimilate up to   16129 observations
+ PE 0:  filter trace: Before observation assimilation
+ Before observation assimilation TIME: 2023/07/18 11:36:07</p>
+<p>------------------------------------------------------------
+Sender: LSF System <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#108;&#115;&#102;&#97;&#100;&#109;&#105;&#110;&#64;&#99;&#49;&#55;&#110;&#48;&#52;">&#108;&#115;&#102;&#97;&#100;&#109;&#105;&#110;&#64;&#99;&#49;&#55;&#110;&#48;&#52;</a>
+Subject: Job 8906831: <test_main_eakf_allsky_cf0.001> in cluster <njucluster> Exited</p>
+<p>and about the r4 in quantile_method branch,  i made a minor change to rh_distribution.f90 (just add a 1e-10_r8 to bounds, see code blocks below) and it works... for now I decide to continue my work with r4 precision, and after the problem in r8 is solved i will make some comparison to make sure whether r4 DART in quantile_method have problems or not.</p>
+<pre><code class="language-fortran">   if(bounded_below) then
+      if(x(i) &lt; lower_bound - 1e-10_r8) then
+         write(errstring, *) 'x less than lower_bound ', i, x(i)
+         call error_handler(E_ERR, 'inv_rh_cdf', errstring, source)
+      endif
+   endif
+
+   if(bounded_above) then
+      if(x(i) &gt; upper_bound + 1e-10_r8) then
+         write(errstring, *) 'x greater than upper_bound ', i, x(i)
+         call error_handler(E_ERR, 'inv_rh_cdf', errstring, source)
+      endif
+   endif
+</code></pre>
+<p>Many thanks for your help~
+Haoxing</p>
+<hr />
+<p>Thanks for the update Haoxing!</p>
+<p>The hanging, then exiting without an error is something we see when running out of memory.   I'm hoping we can reduce the memory footprint of filter in the not too distant future, so I may reach out to you for your high-res WRF for a test case if that is ok with you.</p>
+<p>Cheers,
+Helen</p>
               
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../rhf_bnrhf_diff/" class="btn btn-neutral float-right" title="RHF与BNRHF主要的不同">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../dart_quantile/" class="btn btn-neutral" title="[Protected] DART_QCEFF main log"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -234,12 +287,12 @@
         <span><a href="../dart_quantile/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../rhf_bnrhf_diff/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
     </span>
 </div>
     <script>var base_url = '../..';</script>
     <script src="../../js/theme.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" defer></script>
       <script src="../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
