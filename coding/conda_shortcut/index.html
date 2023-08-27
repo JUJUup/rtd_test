@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/coding/Automatic%20script%20header%20in%20VSCode/">
+  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/coding/conda_shortcut/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Automatic script header in VSCode - JUJUnotebook</title>
+  <title>conda cheatsheet - JUJUnotebook</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Automatic script header in VSCode";
-    var mkdocs_page_input_path = "coding/Automatic script header in VSCode.md";
-    var mkdocs_page_url = "/JUJUnotebook/coding/Automatic%20script%20header%20in%20VSCode/";
+    var mkdocs_page_name = "conda cheatsheet";
+    var mkdocs_page_input_path = "coding/conda_shortcut.md";
+    var mkdocs_page_url = "/JUJUnotebook/coding/conda_shortcut/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -74,11 +74,21 @@
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../2023-06-25-email-in-linux/">在linux服务器上自动发邮件</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Automatic script header in VSCode</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../Automatic%20script%20header%20in%20VSCode/">Automatic script header in VSCode</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../about_WSL/">about WSL</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../conda_shortcut/">conda cheatsheet</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">conda cheatsheet</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#the-nju-mirror-setting-in-condarc">the nju mirror setting in ~/.condarc</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#some-shortcut">some shortcut</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#to-export-and-import-enveriment-files">to export and import enveriment files</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../intro_to_linux/">关于远程服务器的coding</a>
                     </li>
@@ -117,10 +127,10 @@
         
       
     
-    <li>Automatic script header in VSCode</li>
+    <li>conda cheatsheet</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/coding/Automatic script header in VSCode.md"
+        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/coding/conda_shortcut.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -131,46 +141,35 @@
           <div role="main">
             <div class="section">
               
-                <p>使用snippets: <a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets">vscode official support</a> 这里同时也有pre-defined variable的介绍。</p>
-<p><a href="https://code.visualstudio.com/docs/languages/markdown#:~:text=Snippets%20for%20Markdown,Snippets%20to%20find%20out%20how.">snippets for markdown</a></p>
-<p>snippets我认为是最好的选择。extension里当然也有一些auto-header的插件，但我觉得是脱裤子放屁的行为，VSCode 内置的snippets能简单完成的事不需要再复杂化了(可能也是因为我没有复杂的header需求)。</p>
-<p>如无必要，勿增实体！</p>
-<!-- more -->
+                <!-- more -->
 
-<p>我在markdown.json里的设置，可以作为一个例子</p>
-<pre><code class="language-json">&quot;Auto-generated Header&quot;: {
-&quot;prefix&quot;: &quot;header&quot;,
-&quot;body&quot;: [
-    &quot;---&quot;,
-    &quot;title: &quot;,
-    &quot;date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}&quot;,
-    &quot;categories:&quot;,
-    &quot;tags: &quot;,
-    &quot;---&quot;,
-    &quot;&lt;!-- more --&gt;&quot;
-],
-&quot;description&quot;: &quot;header part for all of haoxing's blog&quot;
-}
-</code></pre>
-<p>设置完成后，在markdown中输入header，就可以自动生成下面这一串：</p>
-<pre><code>---
-title: 
-date: 2023-07-15 15:26:47
-categories:
-tags: 
----
-&lt;!-- more --&gt;
-</code></pre>
-<p>如果没有反应，请参考<a href="https://github.com/Microsoft/vscode/issues/26108">this issue in vscode github</a>
-下面是我在user setting.json里面的code，可以作为一个例子</p>
-<pre><code class="language-json">&quot;[markdown]&quot;: {
-    &quot;editor.unicodeHighlight.ambiguousCharacters&quot;: false,
-    &quot;editor.unicodeHighlight.invisibleCharacters&quot;: false,
-    &quot;diffEditor.ignoreTrimWhitespace&quot;: false,
-    &quot;editor.wordWrap&quot;: &quot;on&quot;,
-    &quot;editor.quickSuggestions&quot;: true
-}
-</code></pre>
+<h1 id="conda-cheatsheet">conda cheatsheet</h1>
+<h2 id="the-nju-mirror-setting-in-condarc">the nju mirror setting in ~/.condarc</h2>
+<p>channels:
+  - conda-forge
+  - defaults
+show_channel_urls: true
+default_channels:
+  - https://mirrors.nju.edu.cn/anaconda/pkgs/free/
+  - https://mirrors.nju.edu.cn/anaconda/pkgs/main
+  - https://mirrors.nju.edu.cn/anaconda/pkgs/r
+  - https://mirrors.nju.edu.cn/anaconda/pkgs/msys2
+custom_channels:
+  conda-forge: https://mirrors.nju.edu.cn/anaconda/cloud
+  msys2: https://mirrors.nju.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.nju.edu.cn/anaconda/cloud
+  menpo: https://mirrors.nju.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.nju.edu.cn/anaconda/cloud
+  simpleitk: https://mirrors.nju.edu.cn/anaconda/cloud
+channel_priority: strict</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>just paste these text in .condarc, and everything is ok~</p>
+</div>
+<h2 id="some-shortcut">some shortcut</h2>
+<h3 id="to-export-and-import-enveriment-files">to export and import enveriment files</h3>
+<p>conda env export &gt; haoxing.yaml
+conda env create -f haoxing.yaml</p>
               
             </div>
           </div>
@@ -178,10 +177,10 @@ tags:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../about_WSL/" class="btn btn-neutral float-right" title="about WSL">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../intro_to_linux/" class="btn btn-neutral float-right" title="关于远程服务器的coding">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../2023-06-25-email-in-linux/" class="btn btn-neutral" title="在linux服务器上自动发邮件"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../about_WSL/" class="btn btn-neutral" title="about WSL"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -209,10 +208,10 @@ tags:
           <a href="https://github.com/JUJUup/JUJUnotebook/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../2023-06-25-email-in-linux/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../about_WSL/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../about_WSL/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../intro_to_linux/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
