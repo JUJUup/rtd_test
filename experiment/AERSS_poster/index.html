@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/coding/about_WSL/">
+  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/experiment/AERSS_poster/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>about WSL - JUJUnotebook</title>
+  <title>ARESS_poster - JUJUnotebook</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "about WSL";
-    var mkdocs_page_input_path = "coding/about_WSL.md";
-    var mkdocs_page_url = "/JUJUnotebook/coding/about_WSL/";
+    var mkdocs_page_name = "ARESS_poster";
+    var mkdocs_page_input_path = "experiment/AERSS_poster.md";
+    var mkdocs_page_url = "/JUJUnotebook/experiment/AERSS_poster/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -71,33 +71,33 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Coding</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../2023-06-25-email-in-linux/">在linux服务器上自动发邮件</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/2023-06-25-email-in-linux/">在linux服务器上自动发邮件</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Automatic%20script%20header%20in%20VSCode/">Automatic script header in VSCode</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/Automatic%20script%20header%20in%20VSCode/">Automatic script header in VSCode</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">about WSL</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install">install</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#using">using</a>
-    </li>
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/about_WSL/">about WSL</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../conda_shortcut/">conda cheatsheet</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/conda_shortcut/">conda cheatsheet</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../intro_to_linux/">关于远程服务器的coding</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/intro_to_linux/">关于远程服务器的coding</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Experiment</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/AERSS_poster/">ARESS_poster</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">ARESS_poster</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#voc_factor_detail">VOC_factor_detail</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reference">Reference</a>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/dart_quantile/">DART_QCEFF main log</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../dart_quantile/">DART_QCEFF main log</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/quantile_regression/">Quantile regression</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../quantile_regression/">Quantile regression</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/real_precise/">关于DART/WRF的精度问题</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../real_precise/">关于DART/WRF的精度问题</a>
                     </li>
                 </ul>
       </div>
@@ -121,14 +121,14 @@
     
       
         
-          <li>Coding &raquo;</li>
+          <li>Experiment &raquo;</li>
         
       
     
-    <li>about WSL</li>
+    <li>ARESS_poster</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/coding/about_WSL.md"
+        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/experiment/AERSS_poster.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -139,30 +139,11 @@
           <div role="main">
             <div class="section">
               
-                <!-- more -->
-<h1 id="about-wsl-in-windows">About WSL in windows</h1>
-<h2 id="install">install</h2>
-<p><a href="https://learn.microsoft.com/en-us/windows/wsl/install">windows official totorial</a></p>
-<p>the distribution i installed: Ubuntu. <span class="arithmatex">\(wsl --install Ubuntu\)</span></p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>about this bug: 
-Installing, this may take a few minutes...
-WslRegisterDistribution failed with error: 0x800701bc
-Error: 0x800701bc WSL 2 ?????????????????? https://aka.ms/wsl2kernel</p>
-<p>please see this <a href="https://github.com/microsoft/WSL/issues/5393">issue</a></p>
-</div>
-<h2 id="using">using</h2>
-<p><a href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode">Get started using Visual Studio Code with Windows Subsystem for Linux</a></p>
-<blockquote>
-<p>You can access Windows files from WSL by navigating to the <code>/mnt</code> directory. For example, to access the C drive, you can use the <code>cd</code> command in the Linux terminal to navigate to <code>/mnt/c</code> ¹. You can also move, edit, create, and delete files between the two systems through WSL ¹.</p>
-<p>For example, to move a file from the Windows file system to the Linux file system, you can use the <code>cp</code> or <code>mv</code> commands ¹. To edit a Windows file through WSL, you can use any text editor that can be opened in the terminal ¹.</p>
-<p>For more detailed information on how to work across Windows and Linux file systems, you can check out this guide from Microsoft Learn ².</p>
-<p>源: 与必应的对话， 7/21/2023
-(1) Access the Windows file system through WSL! - DEV Community. https://dev.to/ivayloiv/access-the-windows-file-system-through-wsl-1ac4.
-(2) Working across file systems | Microsoft Learn. https://learn.microsoft.com/en-us/windows/wsl/filesystems.
-(3) File Permissions for WSL | Microsoft Learn. https://learn.microsoft.com/en-us/windows/wsl/file-permissions.</p>
-</blockquote>
+                <h1 id="aress_poster">ARESS_poster</h1>
+<h2 id="voc_factor_detail">VOC_factor_detail</h2>
+<p><img alt="voc_factor" src="https://pic.imgdb.cn/item/64fae3c0661c6c8e54abd6a1.png" /></p>
+<h2 id="reference">Reference</h2>
+<p><img alt="voc_factor" src="https://pic.imgdb.cn/item/64fae3c0661c6c8e54abd6bb.png" /></p>
               
             </div>
           </div>
@@ -170,10 +151,10 @@ Error: 0x800701bc WSL 2 ?????????????????? https://aka.ms/wsl2kernel</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../conda_shortcut/" class="btn btn-neutral float-right" title="conda cheatsheet">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../dart_quantile/" class="btn btn-neutral float-right" title="DART_QCEFF main log">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Automatic%20script%20header%20in%20VSCode/" class="btn btn-neutral" title="Automatic script header in VSCode"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../coding/intro_to_linux/" class="btn btn-neutral" title="关于远程服务器的coding"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -201,10 +182,10 @@ Error: 0x800701bc WSL 2 ?????????????????? https://aka.ms/wsl2kernel</p>
           <a href="https://github.com/JUJUup/JUJUnotebook/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../Automatic%20script%20header%20in%20VSCode/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../coding/intro_to_linux/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../conda_shortcut/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../dart_quantile/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
