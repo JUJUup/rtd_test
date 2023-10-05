@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/experiment/dart_problem/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Problems when using DART - JUJUnotebook</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Problems when using DART";
+    var mkdocs_page_input_path = "experiment/dart_problem.md";
+    var mkdocs_page_url = "/JUJUnotebook/experiment/dart_problem/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/fortran.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> JUJUnotebook</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">HOME</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../changelog/">Changelog</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Bike</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../bike/memo/">memo for little tricks</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../bike/silkroad/">关于202308丝绸之路的规划</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Blog</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../blog/encrypt_template/">[Protected] encrypt_template</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../blog/mkdocs_rtd_githubpage/">如何建立一个blog？</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Coding</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/2023-06-25-email-in-linux/">在linux服务器上自动发邮件</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/Automatic%20script%20header%20in%20VSCode/">Automatic script header in VSCode</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/about_WSL/">about WSL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/conda_shortcut/">conda cheatsheet</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/intro_to_linux/">关于远程服务器的coding</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Experiment</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../AERSS_poster/">ARESS_poster</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Problems when using DART</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">关于内存占用</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quantile_method-bug">关于精度改变导致的quantile_method bug</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cutoff-valuebug">关于cutoff value不能太小的bug(?)</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../dart_quantile/">DART_QCEFF main log</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../quantile_problem/">关于DART/WRF的精度问题</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../quantile_regression/">Quantile regression</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">JUJUnotebook</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Experiment &raquo;</li>
+        
+      
+    
+    <li>Problems when using DART</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/experiment/dart_problem.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="problems-when-using-dart">Problems when using DART</h1>
+<h2 id="_1">关于内存占用</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Modify the DART code to use 32bit reals. Most WRF/DART users run both the WRF model and the DART assimilation code using 32bit reals. This is not the default for the DART code. Make this single code change before building the DART executables to compile all reals as 32bit reals.</p>
+</div>
+<p>更多相关的信息请参看<a href="https://docs.dart.ucar.edu/en/latest/models/wrf/tutorial/README.html#build-the-dart-executables">WRF/DART tutorial</a> 简而言之，WRF使用单精度浮点数(4个字节，32 bit real number)，而DART默认使用的是64bit real(双精度浮点数)，这在进行内存需求量很大的运算时会要求额外许多的核数，我使用64bit real提交了1200个core到mpi都会报错内存不足，用32bit real的话600 core一下子就能跑了......</p>
+<p>在NJU cluster上，可能的解决办法是使用largemem队列或者fat队列。不过需要注意的是在D03 0030test中，fat节点的所有output在assimilation impact区域内都有明显问题（为缺测值_FillValue=9.96921e+36）
+<img alt="example of this error" src="https://pic.imgdb.cn/item/65041087661c6c8e5478e552.jpg" /></p>
+<h2 id="quantile_method-bug">关于精度改变导致的quantile_method bug</h2>
+<p>邮件咨询了一下DART，下面是邮件记录：</p>
+<hr />
+<p>Dear DARES members:</p>
+<p>Im a graduate student at Nanjing University, and is trying to use DART quantile_method branch to do something. I encountered a bug in this branch, maybe is correlated with the real precision. Here is what happened:</p>
+<p>im assimilating OSSE obs into WRF with fine model resolution, which need a large memory, so i change the real precision by editing $DART_DIR/assimilation_code/modules/utilities/types_mod.f90 follows this guide https://docs.dart.ucar.edu/en/latest/models/wrf/tutorial/README.html#build-the-dart-executables. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>! real precision:</p>
+<p>! TO RUN WITH REDUCED PRECISION REALS (and use correspondingly less memory)</p>
+<p>! comment OUT the r8 definition below and use the second one:</p>
+<p>integer, parameter :: r4 = SELECTED_REAL_KIND(6,30)</p>
+<p>integer, parameter :: r8 = SELECTED_REAL_KIND(12)   ! 8 byte reals</p>
+<p>!integer, parameter :: r8 = r4                      ! alias r8 to r4</p>
+</div>
+<p>after a quickbuild recompile, the filter is re-submitted, and it abort with these message:</p>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>ERROR FROM:</p>
+<p>source : rh_distribution_mod.f90</p>
+<p>routine: inv_rh_cdf</p>
+<p>message:  x less than lower_bound           19 -2.0822274E-15</p>
+</div>
+<p>i have tried the two real precision in a coarser grid case, r8 goes smoothly without any problem, and r4 will encounter the same error:</p>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>ERROR FROM:</p>
+<p>source : rh_distribution_mod.f90</p>
+<p>routine: inv_rh_cdf</p>
+<p>message:  x less than lower_bound           11 -4.1970271E-16</p>
+</div>
+<p>The error part of code in inv_rh_cdf says:</p>
+<pre><code class="language-fortran">   ! Check for posterior violating bounds; This may not be needed after development testing
+   if(bounded_below) then
+      if(x(i) &lt; lower_bound) then
+         write(errstring, *) 'x less than lower_bound ', i, x(i)
+         call error_handler(E_ERR, 'inv_rh_cdf', errstring, source)
+      endif
+   endif
+
+   if(bounded_above) then
+      if(x(i) &gt; upper_bound) then
+         write(errstring, *) 'x greater than upper_bound ', i, x(i)
+         call error_handler(E_ERR, 'inv_rh_cdf', errstring, source)
+      endif
+   endif
+</code></pre>
+<p>Seems it is ok to just ignore these error by commenting out this part of code? Or is it needed to polish the check so it can ignore the small bound violation brought by real precision? I checked the newest quantile_method branch in Github, the source code where things went wrong may have changed to 'rh_distribution_mod.f90'.</p>
+<p>Thanks for any reply~</p>
+<p>Haoxing</p>
+<hr />
+<p>On Sun, Jul 16, 2023 at 11:13 AM Jeffrey Anderson <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#108;&#97;&#64;&#117;&#99;&#97;&#114;&#46;&#101;&#100;&#117;">&#106;&#108;&#97;&#64;&#117;&#99;&#97;&#114;&#46;&#101;&#100;&#117;</a> wrote:
+Haoxing,
+The quantile_method branch has not been tested with reduced precision for reals. I think there are serious concerns about using the transforms with reduced precision, but I do not have time to evaluate those issues in the immediate future. A solution would be to work with higher resolution within certain parts of the assimilation code, but I have not thought about exactly what part of the code would require that. Obviously the message you report has identified at least one place.</p>
+<p>You could go ahead and turn off this error and see what happens, but you should be extremely cautious in interpreting the results. </p>
+<p>Sorry that I can't be of more immediate help, Jeff</p>
+<hr />
+<p>Hi Haoxing,</p>
+<p>Here are a few namelist options you can set to reduce the per-node memory for filter.  Possibly your WRF domain is still too big, but you can give these a try. </p>
+<p>&amp;assim_tools_nml
+distribute_mean = .true.
+/
+This will spread the mean across all processors, rather than each processor having a copy of the mean during the assimilation.</p>
+<p>$ensemble_manager_nml
+layout = 2
+tasks_per_node = N
+/
+where N is the number of tasks per node you are using on the machine.  This will spread out the ensemble members across the nodes, which reduces the per-node memory particularly when doing state IO.</p>
+<p>&amp;state_vector_io_nml
+single_precision_output = .true.
+/
+This will read and write wrf single precision (r4) files, even if filter is built with double precision (r8).   This is useful if you need to run wrf in single precision, but you have enough per-node memory to to run filter double precision. </p>
+<p>Cheers,
+Helen</p>
+<hr />
+<p>Hi Jeff and Helen,</p>
+<p>Thanks for the reply! I have tried the suggested options from Helen(distribute_mean = .true. || tasks_per_node = 30 || single_precision_output = .true.), it does not abort when using fewer cores, but is stuck in 'filter_assim' and not output any info... The end of log file is shown below, and the whole log and input.nml will be in attachment. (the input.nml and test.log is using main branch's filter. quantile_method branch's filter is also facing the same problem.)</p>
+<p>PE 0:  filter trace: After  computing prior observation values
+ PE 0:  filter trace: Before observation space diagnostics
+ PE 0:  filter trace: After  observation space diagnostics
+ PE 0: filter: Ready to assimilate up to   16129 observations
+ PE 0:  filter trace: Before observation assimilation
+ Before observation assimilation TIME: 2023/07/18 11:36:07</p>
+<p>------------------------------------------------------------
+Sender: LSF System <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#108;&#115;&#102;&#97;&#100;&#109;&#105;&#110;&#64;&#99;&#49;&#55;&#110;&#48;&#52;">&#108;&#115;&#102;&#97;&#100;&#109;&#105;&#110;&#64;&#99;&#49;&#55;&#110;&#48;&#52;</a>
+Subject: Job 8906831: <test_main_eakf_allsky_cf0.001> in cluster <njucluster> Exited</p>
+<p>and about the r4 in quantile_method branch,  i made a minor change to rh_distribution.f90 (just add a 1e-10_r8 to bounds, see code blocks below) and it works... for now I decide to continue my work with r4 precision, and after the problem in r8 is solved i will make some comparison to make sure whether r4 DART in quantile_method have problems or not.</p>
+<pre><code class="language-fortran">   if(bounded_below) then
+      if(x(i) &lt; lower_bound - 1e-10_r8) then
+         write(errstring, *) 'x less than lower_bound ', i, x(i)
+         call error_handler(E_ERR, 'inv_rh_cdf', errstring, source)
+      endif
+   endif
+
+   if(bounded_above) then
+      if(x(i) &gt; upper_bound + 1e-10_r8) then
+         write(errstring, *) 'x greater than upper_bound ', i, x(i)
+         call error_handler(E_ERR, 'inv_rh_cdf', errstring, source)
+      endif
+   endif
+</code></pre>
+<p>Many thanks for your help~
+Haoxing</p>
+<hr />
+<p>Thanks for the update Haoxing!</p>
+<p>The hanging, then exiting without an error is something we see when running out of memory.   I'm hoping we can reduce the memory footprint of filter in the not too distant future, so I may reach out to you for your high-res WRF for a test case if that is ok with you.</p>
+<p>Cheers,
+Helen</p>
+<h2 id="cutoff-valuebug">关于cutoff value不能太小的bug(?)</h2>
+<p>首先这可能不是个bug，是我的问题...暂时还没找到原因。</p>
+<p>如果让cutoff value小于0.001，那么d03_0030 test中filter output结果将会和firstguess完全一样。已经排除了是计算节点的问题（尝试过不同队列，结果一样），观测值数量导致的（可能的内存）问题（reduce9观测依然结果一样）。在log中output了obs_inc以及reg_coef,final_factor，都是有正常的值的。<strong>有可能跟vertical localization有关吗？</strong></p>
+<p>update: 还真是跟vertical localization有关……cutoff太小导致vertical localization太小导致353hpa的观测影响不到任何一个model layer。im so silly!!!</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dart_quantile/" class="btn btn-neutral float-right" title="DART_QCEFF main log">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../AERSS_poster/" class="btn btn-neutral" title="ARESS_poster"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/JUJUup/JUJUnotebook/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../AERSS_poster/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../dart_quantile/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
