@@ -58,9 +58,9 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Bike</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../bike/memo/">memo for little tricks</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../bike/memo/">Memo for bikes</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../bike/silkroad/">关于202308丝绸之路的规划</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../bike/silkroad/">The Grand Tour</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Blog</span></p>
@@ -83,10 +83,6 @@
     <li class="toctree-l2"><a class="reference internal" href="#the-nju-mirror-setting-in-condarc">the nju mirror setting in ~/.condarc</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#some-shortcut">some shortcut</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#to-export-and-import-enveriment-files">to export and import enveriment files</a>
-    </li>
-        </ul>
     </li>
     </ul>
                     </li>
@@ -149,7 +145,8 @@
 
 <h1 id="conda-cheatsheet">conda cheatsheet</h1>
 <h2 id="the-nju-mirror-setting-in-condarc">the nju mirror setting in ~/.condarc</h2>
-<p>channels:
+<p>'''
+channels:
   - conda-forge
   - defaults
 show_channel_urls: true
@@ -165,15 +162,17 @@ custom_channels:
   menpo: https://mirrors.nju.edu.cn/anaconda/cloud
   pytorch: https://mirrors.nju.edu.cn/anaconda/cloud
   simpleitk: https://mirrors.nju.edu.cn/anaconda/cloud
-channel_priority: strict</p>
+channel_priority: strict
+'''</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>just paste these text in .condarc, and everything is ok~</p>
 </div>
 <h2 id="some-shortcut">some shortcut</h2>
-<h3 id="to-export-and-import-enveriment-files">to export and import enveriment files</h3>
-<p>conda env export &gt; haoxing.yaml
-conda env create -f haoxing.yaml</p>
+<p>conda env export &gt; haoxing.yaml</p>
+<p>conda env create -f haoxing.yaml</p>
+<p>conda env remove --name $env_name ------&gt; this will remove given $env_name env, remember the --name</p>
+<p>conda update $pkg -------&gt; update. always confuse with homebrew...</p>
               
             </div>
           </div>
