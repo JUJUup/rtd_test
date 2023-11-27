@@ -263,7 +263,7 @@ Helen</p>
 <h2 id="cutoff-valuebug">关于cutoff value不能太小的bug(?)</h2>
 <p>首先这可能不是个bug，是我的问题...暂时还没找到原因。</p>
 <p>如果让cutoff value小于0.001，那么d03_0030 test中filter output结果将会和firstguess完全一样。已经排除了是计算节点的问题（尝试过不同队列，结果一样），观测值数量导致的（可能的内存）问题（reduce9观测依然结果一样）。在log中output了obs_inc以及reg_coef,final_factor，都是有正常的值的。<strong>有可能跟vertical localization有关吗？</strong></p>
-<p>update: 还真是跟vertical localization有关……cutoff太小导致vertical localization太小导致353hpa的观测影响不到任何一个model layer。im so silly!!!</p>
+<p><strong>update</strong>: 还真是跟vertical localization有关……cutoff太小导致vertical localization太小导致353hpa的观测影响不到任何一个model layer。im so silly!!!</p>
               
             </div>
           </div>
