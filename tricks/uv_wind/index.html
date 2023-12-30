@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/experiment/AERSS_poster/">
+  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/tricks/uv_wind/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>ARESS_poster - JUJUnotebook</title>
+  <title>U/V, stagger, Vt/Vr - JUJUnotebook</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "ARESS_poster";
-    var mkdocs_page_input_path = "experiment/AERSS_poster.md";
-    var mkdocs_page_url = "/JUJUnotebook/experiment/AERSS_poster/";
+    var mkdocs_page_name = "U/V, stagger, Vt/Vr";
+    var mkdocs_page_input_path = "tricks/uv_wind.md";
+    var mkdocs_page_url = "/JUJUnotebook/tricks/uv_wind/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -82,29 +82,23 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Experiment</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">ARESS_poster</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#voc_factor_detail">VOC_factor_detail</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#reference">Reference</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/AERSS_poster/">ARESS_poster</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../dart_problem/">Problems when using DART</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/dart_problem/">Problems when using DART</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../dart_quantile/">DART_QCEFF main log</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/dart_quantile/">[Protected] DART_QCEFF main log</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../quantile_problem/">关于DART/WRF的精度问题</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/quantile_problem/">关于DART/WRF的精度问题</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../quantile_regression/">Quantile regression</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/quantile_regression/">Quantile regression</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Tricks</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tricks/2023-06-25-email-in-linux/">在linux服务器上自动发邮件</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../2023-06-25-email-in-linux/">在linux服务器上自动发邮件</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tricks/uv_wind/">U/V, stagger, Vt/Vr</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">U/V, stagger, Vt/Vr</a>
                     </li>
                 </ul>
       </div>
@@ -128,14 +122,14 @@
     
       
         
-          <li>Experiment &raquo;</li>
+          <li>Tricks &raquo;</li>
         
       
     
-    <li>ARESS_poster</li>
+    <li>U/V, stagger, Vt/Vr</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/experiment/AERSS_poster.md"
+        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/tricks/uv_wind.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -146,11 +140,13 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="aress_poster">ARESS_poster</h1>
-<h2 id="voc_factor_detail">VOC_factor_detail</h2>
-<p><img alt="voc_factor" src="https://pic.imgdb.cn/item/64fae3c0661c6c8e54abd6a1.png" /></p>
-<h2 id="reference">Reference</h2>
-<p><img alt="voc_factor" src="https://pic.imgdb.cn/item/64fae3c0661c6c8e54abd6bb.png" /></p>
+                <p><a href="http://colaweb.gmu.edu/dev/clim301/lectures/wind/wind-uv">WRF U/V wind basic; wind_d-&gt;math_d</a></p>
+<p>为什么要提这么basic的东西？因为u/v-&gt;Vt/Vr需要使用math angle, 而我的polar transform使用的是wind angle，差点踩坑了……</p>
+<p>for example, ncl script doing Vt/Vr calculation by this:</p>
+<pre><code class="language-ncl">Vt(it,len,ang) = va_po(it,len,ang)*cos(1.*ang*pp)-ua_po(it,len,ang)*sin(1.*ang*pp)
+Vr(it,len,ang) = va_po(it,len,ang)*sin(1.*ang*pp)+ua_po(it,len,ang)*cos(1.*ang*pp)
+</code></pre>
+<p>The <span class="arithmatex">\(1.*ang*pp\)</span> here is theta, and is math angle, not wind angle! </p>
               
             </div>
           </div>
@@ -158,10 +154,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../dart_problem/" class="btn btn-neutral float-right" title="Problems when using DART">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../../coding/intro_to_linux/" class="btn btn-neutral" title="关于远程服务器的coding"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2023-06-25-email-in-linux/" class="btn btn-neutral" title="在linux服务器上自动发邮件"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -189,10 +183,8 @@
           <a href="https://github.com/JUJUup/JUJUnotebook/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../coding/intro_to_linux/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../2023-06-25-email-in-linux/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../dart_problem/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
