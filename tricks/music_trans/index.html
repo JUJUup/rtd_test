@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/coding/Automatic%20script%20header%20in%20VSCode/">
+  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/tricks/music_trans/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Automatic script header in VSCode - JUJUnotebook</title>
+  <title>音频格式转换(with script) - JUJUnotebook</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Automatic script header in VSCode";
-    var mkdocs_page_input_path = "coding/Automatic script header in VSCode.md";
-    var mkdocs_page_url = "/JUJUnotebook/coding/Automatic%20script%20header%20in%20VSCode/";
+    var mkdocs_page_name = "\u97f3\u9891\u683c\u5f0f\u8f6c\u6362(with script)";
+    var mkdocs_page_input_path = "tricks/music_trans.md";
+    var mkdocs_page_url = "/JUJUnotebook/tricks/music_trans/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -82,16 +82,16 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Coding</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Automatic script header in VSCode</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/Automatic%20script%20header%20in%20VSCode/">Automatic script header in VSCode</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../about_WSL/">about WSL</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/about_WSL/">about WSL</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../conda_shortcut/">conda cheatsheet</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/conda_shortcut/">conda cheatsheet</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../configure_issues/">configure issues</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/configure_issues/">configure issues</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../intro_to_linux/">关于远程服务器的coding</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/intro_to_linux/">关于远程服务器的coding</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Experiment</span></p>
@@ -100,20 +100,22 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../experiment/dart_problem/">Problems when using DART</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/dart_quantile/">DART_QCEFF main log</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/dart_quantile/">[Protected] DART_QCEFF main log</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../experiment/quantile_regression/">Quantile regression</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Tricks</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tricks/2023-06-25-email-in-linux/">在linux服务器上自动发邮件</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../2023-06-25-email-in-linux/">在linux服务器上自动发邮件</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tricks/music_trans/">音频格式转换(with script)</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">音频格式转换(with script)</a>
+    <ul class="current">
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tricks/offline_nevigation/">离线地图导航(in Apple Watch)</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../offline_nevigation/">离线地图导航(in Apple Watch)</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../tricks/uv_wind/">U/V, stagger, Vt/Vr</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../uv_wind/">U/V, stagger, Vt/Vr</a>
                     </li>
                 </ul>
       </div>
@@ -137,14 +139,14 @@
     
       
         
-          <li>Coding &raquo;</li>
+          <li>Tricks &raquo;</li>
         
       
     
-    <li>Automatic script header in VSCode</li>
+    <li>音频格式转换(with script)</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/coding/Automatic script header in VSCode.md"
+        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/tricks/music_trans.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -155,46 +157,22 @@
           <div role="main">
             <div class="section">
               
-                <p>使用snippets: <a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets">vscode official support</a> 这里同时也有pre-defined variable的介绍。</p>
-<p><a href="https://code.visualstudio.com/docs/languages/markdown#:~:text=Snippets%20for%20Markdown,Snippets%20to%20find%20out%20how.">snippets for markdown</a></p>
-<p>snippets我认为是最好的选择。extension里当然也有一些auto-header的插件，但我觉得是脱裤子放屁的行为，VSCode 内置的snippets能简单完成的事不需要再复杂化了(可能也是因为我没有复杂的header需求)。</p>
-<p>如无必要，勿增实体！</p>
-<!-- more -->
-
-<p>我在markdown.json里的设置，可以作为一个例子</p>
-<pre><code class="language-json">&quot;Auto-generated Header&quot;: {
-&quot;prefix&quot;: &quot;header&quot;,
-&quot;body&quot;: [
-    &quot;---&quot;,
-    &quot;title: &quot;,
-    &quot;date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}&quot;,
-    &quot;categories:&quot;,
-    &quot;tags: &quot;,
-    &quot;---&quot;,
-    &quot;&lt;!-- more --&gt;&quot;
-],
-&quot;description&quot;: &quot;header part for all of haoxing's blog&quot;
-}
+                <h2 id="why-i-need-this">Why i need this?</h2>
+<p>苹果全家桶用户(本人)希望有一个云端音乐库，可以在不同的设备上访问我的所有专辑。尽管Apple Music的音乐管理有点一言难尽，但实在是苹果全家桶用户的最不用动脑子的选择。</p>
+<p>Apple Music不能接受flac格式的音频文件，但不幸的是本人从各个资源网站上搞下来的专辑常常是flac...我需要有一个方法能够快速方便地将flac无损压缩转换成wav。当然，最好是any_form&lt;-&gt;any_form。</p>
+<h2 id="to-be-short">To be short:</h2>
+<p><a href="https://www.ffmpeg.org/">ffmpeg</a>可以方便地通过命令行实现这个需求。</p>
+<p>具体用法如下：</p>
+<p>在 ～/scripts 中创建如下文件: flac2wav.sh</p>
+<pre><code class="language-bash">#!/bin/bash
+for file in *.flac; do
+    ffmpeg -i &quot;$file&quot; &quot;${file%.flac}.wav&quot;
+done
 </code></pre>
-<p>设置完成后，在markdown中输入header，就可以自动生成下面这一串：</p>
-<pre><code>---
-title: 
-date: 2023-07-15 15:26:47
-categories:
-tags: 
----
-&lt;!-- more --&gt;
+<p>如果没有将这个路径添加到zshrc/bashrc中，需要加下面这一行code:</p>
+<pre><code class="language-bash">export PATH=$PATH:~/scripts
 </code></pre>
-<p>如果没有反应，请参考<a href="https://github.com/Microsoft/vscode/issues/26108">this issue in vscode github</a>
-下面是我在user setting.json里面的code，可以作为一个例子</p>
-<pre><code class="language-json">&quot;[markdown]&quot;: {
-    &quot;editor.unicodeHighlight.ambiguousCharacters&quot;: false,
-    &quot;editor.unicodeHighlight.invisibleCharacters&quot;: false,
-    &quot;diffEditor.ignoreTrimWhitespace&quot;: false,
-    &quot;editor.wordWrap&quot;: &quot;on&quot;,
-    &quot;editor.quickSuggestions&quot;: true
-}
-</code></pre>
+<p>现在，只要在需要进行格式转换的文件夹下type flac2wav，双手离开键盘就行了</p>
               
             </div>
           </div>
@@ -202,10 +180,10 @@ tags:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../about_WSL/" class="btn btn-neutral float-right" title="about WSL">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../offline_nevigation/" class="btn btn-neutral float-right" title="离线地图导航(in Apple Watch)">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../camera/old-manuel/" class="btn btn-neutral" title="Old-Manuel-Lens"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2023-06-25-email-in-linux/" class="btn btn-neutral" title="在linux服务器上自动发邮件"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -233,10 +211,10 @@ tags:
           <a href="https://github.com/JUJUup/JUJUnotebook/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../camera/old-manuel/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../2023-06-25-email-in-linux/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../about_WSL/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../offline_nevigation/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
