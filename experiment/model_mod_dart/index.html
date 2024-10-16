@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/bike/bangumi/">
+  <link rel="canonical" href="https://jujuup.github.io/JUJUnotebook/experiment/model_mod_dart/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Bangumis for training - JUJUnotebook</title>
+  <title>How to import a model into DART? - JUJUnotebook</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Bangumis for training";
-    var mkdocs_page_input_path = "bike/bangumi.md";
-    var mkdocs_page_url = "/JUJUnotebook/bike/bangumi/";
+    var mkdocs_page_name = "How to import a model into DART?";
+    var mkdocs_page_input_path = "experiment/model_mod_dart.md";
+    var mkdocs_page_url = "/JUJUnotebook/experiment/model_mod_dart/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -57,21 +57,21 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Bike</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Bangumis for training</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../bike/bangumi/">Bangumis for training</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../grandtour/">The Grand Tour</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../bike/grandtour/">The Grand Tour</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../history_tricks/">History and tricks</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../bike/history_tricks/">History and tricks</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../service/">Service my bike</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../bike/service/">Service my bike</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../training/">Training/self-coaching</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../bike/training/">Training/self-coaching</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Blog</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../blog/encrypt_template/">encrypt_template</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../blog/encrypt_template/">[Protected] encrypt_template</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../blog/mkdocs_rtd_githubpage/">如何建立一个blog？</a>
                     </li>
@@ -83,7 +83,7 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Career</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../career/why_master_out/">Master out</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../career/why_master_out/">[Protected] Master out</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Coding</span></p>
@@ -100,16 +100,34 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Experiment</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/AERSS_poster/">ARESS_poster</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../AERSS_poster/">ARESS_poster</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/dart_problem/">Problems when using DART</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../dart_problem/">Problems when using DART</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/dart_quantile/">DART_QCEFF main log</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../dart_quantile/">[Protected] DART_QCEFF main log</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/model_mod_dart/">How to import a model into DART?</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">How to import a model into DART?</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#some-reference">Some reference:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#what-quantities-are-in-the-model-stateorigin">What quantities are in the model state?origin</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-needed-to-run-pangu-with-dart">What is needed to run Pangu with DART?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#translate-numpy-ndarray-into-netcdf-files-for-dart-reading">translate numpy ndarray into NetCDF files for DART reading.</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#using-xarray-to-do-the-translation-may-be-the-better-choice">using xarray to do the translation may be the better choice.</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../experiment/quantile_regression/">Quantile regression</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../quantile_regression/">Quantile regression</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Tricks</span></p>
@@ -144,14 +162,14 @@
     
       
         
-          <li>Bike &raquo;</li>
+          <li>Experiment &raquo;</li>
         
       
     
-    <li>Bangumis for training</li>
+    <li>How to import a model into DART?</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/bike/bangumi.md"
+        <a href="https://github.com/JUJUup/JUJUnotebook/edit/master/docs/experiment/model_mod_dart.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -162,10 +180,23 @@
           <div role="main">
             <div class="section">
               
-                <p>撸骑行台的Bangumi list。</p>
-<p><a href="https://www.bilibili.com/bangumi/play/ss703">人類は衰退しました</a></p>
-<p><a href="https://www.bilibili.com/bangumi/play/ss992?spm_id_from=333.337.0.0">それでも町は廻っている</a></p>
-<p><a href="https://www.bilibili.com/video/BV1Bx411c7XH/?spm_id_from=333.337.search-card.all.click&amp;vd_source=54c4d3b08c304762d66fe212fa812829">ヨコハマ買い出し紀行</a></p>
+                <h1 id="how-to-import-a-model-into-dart">How to import a model into DART?</h1>
+<h2 id="some-reference">Some reference:</h2>
+<p><a href="https://docs.dart.ucar.edu/en/latest/guide/advice-for-new-collaborators.html">Can I run my model with DART? — DART 11.7.0 documentation (ucar.edu)</a></p>
+<p>Pay special attention to <strong>What code is required to interface a model with DART</strong></p>
+<p><a href="https://docs.dart.ucar.edu/en/latest/guide/instructions-for-porting-a-new-model-to-dart.html#porting-new-models">Instructions for porting a new model to DART — DART 11.7.0 documentation (ucar.edu)</a></p>
+<p><a href="https://docs.dart.ucar.edu/en/latest/guide/required-model-mod-routines.html">Required model_mod routines — DART 11.7.0 documentation (ucar.edu)</a></p>
+<p><a href="https://docs.dart.ucar.edu/en/latest/guide/suggestions-for-a-complex-model.html">Suggestions for a “complex” model — DART 11.7.0 documentation (ucar.edu)</a></p>
+<p><a href="https://docs.dart.ucar.edu/en/latest/guide/how-to-test-your-model-mod-routines.html">How to test your model_mod routines — DART 11.7.0 documentation (ucar.edu)</a></p>
+<h3 id="what-quantities-are-in-the-model-stateorigin">What quantities are in the <strong>model</strong> state?<a href="https://docs.dart.ucar.edu/en/latest/guide/advice-for-new-collaborators.html#what-quantities-are-in-the-model-state">origin</a></h3>
+<p>DART defines a “Quantity” as the fundamental physical object a value is measuring. Examples are Temperature, Pressure, Salinity, etc. Each value in a <strong>model</strong> state must be associated with a defined quantity.</p>
+<h2 id="what-is-needed-to-run-pangu-with-dart">What is needed to run Pangu with DART?</h2>
+<h3 id="translate-numpy-ndarray-into-netcdf-files-for-dart-reading">translate numpy ndarray into NetCDF files for DART reading.</h3>
+<p>Try CAM format for now?</p>
+<h4 id="using-xarray-to-do-the-translation-may-be-the-better-choice">using xarray to do the translation may be the better choice.</h4>
+<p>some resources:</p>
+<p><a href="https://docs.xarray.dev/en/stable/user-guide/io.html#netcdf">Reading and writing files (xarray.dev)</a></p>
+<p><a href="https://docs.unidata.ucar.edu/netcdf-c/current/faq.html#What-Is-netCDF">NetCDF: FAQ (ucar.edu)</a></p>
               
             </div>
           </div>
@@ -173,10 +204,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../grandtour/" class="btn btn-neutral float-right" title="The Grand Tour">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../quantile_regression/" class="btn btn-neutral float-right" title="Quantile regression">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../changelog/" class="btn btn-neutral" title="Changelog"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../dart_quantile/" class="btn btn-neutral" title="[Protected] DART_QCEFF main log"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -204,10 +235,10 @@
           <a href="https://github.com/JUJUup/JUJUnotebook/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../changelog/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../dart_quantile/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../grandtour/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../quantile_regression/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
